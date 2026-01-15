@@ -1,0 +1,52 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-gray-200 bg-gray-50 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
+      <div class="col-span-2 lg:col-span-2">
+        <a href="/" class="flex items-center gap-2 mb-4">
+          <div class="flex size-6 items-center justify-center rounded bg-primary text-black">
+            <span class="material-symbols-outlined text-[16px]">terrain</span>
+          </div>
+          <span class="text-lg font-bold text-gray-900">Driftless<span class="text-primary">Logic</span></span>
+        </a>
+        <p class="text-gray-500 text-sm max-w-xs mb-6">
+          Where federal expertise meets AI-driven development. Veteran-owned. Mission-focused.
+        </p>
+        <div class="flex gap-4">
+          <a class="text-gray-400 hover:text-gray-900" href="mailto:jake@driftlesslogic.com" aria-label="Email">
+            <span class="material-symbols-outlined">mail</span>
+          </a>
+          <a class="text-gray-400 hover:text-gray-900" href="https://linkedin.com/company/driftless-logic" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <span class="material-symbols-outlined">group</span>
+          </a>
+          <a class="text-gray-400 hover:text-gray-900" href="https://github.com/driftless-logic" target="_blank" rel="noopener" aria-label="GitHub">
+            <span class="material-symbols-outlined">code</span>
+          </a>
+        </div>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-gray-900 font-bold">Platform</h4>
+        <a class="text-sm text-gray-500 hover:text-primary" href="/methodology">Methodology</a>
+        <a class="text-sm text-gray-500 hover:text-primary" href="/swarm">Driftless Swarm</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-gray-900 font-bold">Company</h4>
+        <a class="text-sm text-gray-500 hover:text-primary" href="/about">About</a>
+        <a class="text-sm text-gray-500 hover:text-primary" href="/contact">Contact</a>
+      </div>
+      <div class="flex flex-col gap-4">
+        <h4 class="text-gray-900 font-bold">Connect</h4>
+        <a class="text-sm text-gray-500 hover:text-primary" href="https://linkedin.com/company/driftless-logic" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="text-sm text-gray-500 hover:text-primary" href="https://github.com/driftless-logic" target="_blank" rel="noopener">GitHub</a>
+        <a class="text-sm text-gray-500 hover:text-primary" href="https://twitter.com/DriftlessLogic" target="_blank" rel="noopener">X / Twitter</a>
+      </div>
+    </div>
+    <div class="border-t border-gray-200 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-gray-400">&copy; {currentYear} Driftless Logic LLC. All rights reserved.</p>
+      <p class="text-xs text-gray-400">Service-Disabled Veteran-Owned Small Business (SDVOSB)</p>
+    </div>
+  </div>
+</footer>

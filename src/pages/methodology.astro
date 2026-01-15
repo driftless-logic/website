@@ -1,0 +1,160 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Driftless Methodology - The Evolution Beyond Agile">
+  <Header />
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-20 overflow-hidden bg-white">
+    <div class="absolute inset-0 bg-topo-pattern pointer-events-none opacity-100"></div>
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[100px] pointer-events-none mix-blend-multiply"></div>
+
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+      <div class="max-w-3xl">
+        <div class="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 mb-8 shadow-sm">
+          <span class="material-symbols-outlined text-primary text-sm">route</span>
+          <span class="text-xs font-medium text-gray-600">Methodology</span>
+        </div>
+
+        <h1 class="text-4xl md:text-6xl font-bold tracking-tighter text-gray-900 mb-6">
+          Agile was built for humans.<span class="text-primary block mt-2">Driftless is built for what comes next.</span>
+        </h1>
+
+        <p class="text-lg text-gray-500 leading-relaxed">
+          A development methodology designed from the ground up for teams where AI agents work alongside human developers. Not a framework bolted onto agile—a fundamental rethinking of how software gets built.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Manifesto -->
+  <section class="py-20 bg-gray-50 border-y border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-6">The Manifesto</h2>
+        <div class="prose prose-lg text-gray-600 space-y-4">
+          <p>
+            We spent decades running agile at scale. Five release trains. Hundreds of developers. Thousands of sprints. We know what works. We also know what's broken.
+          </p>
+          <p>
+            Sprint boundaries that create artificial delays. Pre-planned teams that never have the right skills at the right moment. Estimation rituals that consume hours and predict nothing. Phase gates that exist to create the illusion of control.
+          </p>
+          <p class="font-semibold text-gray-900">
+            Driftless doesn't patch these problems. It dissolves them.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Principles -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="mb-16 max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Core Principles</h2>
+        <p class="text-gray-500">The foundational shifts that define the Driftless approach.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card p-8 rounded-xl">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">waves</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Continuous Flow <span class="text-gray-400">over</span> Sprint Boundaries</h3>
+          </div>
+          <p class="text-gray-500">Work moves when it's ready, not when the calendar says so.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">diversity_3</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Emergent Organization <span class="text-gray-400">over</span> Prescribed Structure</h3>
+          </div>
+          <p class="text-gray-500">Teams form around objectives and dissolve when complete.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">person</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Human as Guide <span class="text-gray-400">over</span> Human as Gatekeeper</h3>
+          </div>
+          <p class="text-gray-500">You're the source of truth and direction, not a checkpoint.</p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">terrain</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Terrain-Based Navigation <span class="text-gray-400">over</span> Story Point Theater</h3>
+          </div>
+          <p class="text-gray-500">Map complexity by landscape, not by made-up numbers.</p>
+        </div>
+
+      </div>
+      <div class="mt-6 flex justify-center">
+        <div class="glass-card p-8 rounded-xl w-full md:w-[calc(50%-0.75rem)]">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="size-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+              <span class="material-symbols-outlined">flag</span>
+            </div>
+            <h3 class="text-xl font-bold text-gray-900">Outcome Decomposition <span class="text-gray-400">over</span> Task Assignment</h3>
+          </div>
+          <p class="text-gray-500">Define where you're going. Let the swarm find the path.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terminology Shift -->
+  <section class="py-24 bg-background-alt relative overflow-hidden">
+    <div class="absolute inset-0 bg-topo-pattern opacity-40 pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">The Terminology Shift</h2>
+        <p class="text-gray-500">Driftless speaks a different language. Not jargon for jargon's sake—new words because the old ones carry old assumptions.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+          <p class="text-gray-400 text-sm line-through mb-2">Sprints</p>
+          <p class="text-xl font-bold text-gray-900">Expeditions</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+          <p class="text-gray-400 text-sm line-through mb-2">Backlogs</p>
+          <p class="text-xl font-bold text-gray-900">Terrain</p>
+        </div>
+        <div class="bg-white rounded-xl p-6 border border-gray-200 text-center">
+          <p class="text-gray-400 text-sm line-through mb-2">Standups</p>
+          <p class="text-xl font-bold text-gray-900">Elevation Reports</p>
+        </div>
+      </div>
+
+      <p class="text-center text-gray-500 mt-12 max-w-2xl mx-auto">
+        The full framework—terminology, ceremonies, metrics, migration guides—is available to registered partners and early adopters.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 bg-white border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to see the complete methodology?</h2>
+      <p class="text-gray-500 mb-8 max-w-2xl mx-auto">Request access to the full Driftless framework, including implementation guides, ceremony structures, and migration paths from SAFe.</p>
+      <a href="/contact" class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-4 text-base font-bold text-black hover:bg-green-400 transition-all shadow-lg shadow-primary/30">
+        Request Access
+        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
