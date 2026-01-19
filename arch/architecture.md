@@ -116,9 +116,21 @@ sequenceDiagram
 
 | Property | Value |
 |----------|-------|
-| Verified Identity | `jake@driftlesslogic.com` |
+| Verified Identities | `jake@driftlesslogic.com`, `driftlesslogic.com` (domain) |
 | Region | `us-east-1` |
-| Mode | Sandbox (verified addresses only) |
+| Mode | Production (requested) |
+| DKIM | Enabled |
+
+### Email Authentication (DNS Records)
+
+| Record Type | Name | Value |
+|-------------|------|-------|
+| TXT | `_amazonses` | `+oZ4vhEVicY/snzkqnG2OLlU4Swr5oyPmggVfWuDUZU=` |
+| CNAME | `y5o45rx3q5mx22h2ph4a7f6nslky3ghg._domainkey` | `y5o45rx3q5mx22h2ph4a7f6nslky3ghg.dkim.amazonses.com` |
+| CNAME | `3yrum4vd3atlfy55iqmute54mlsnd3tw._domainkey` | `3yrum4vd3atlfy55iqmute54mlsnd3tw.dkim.amazonses.com` |
+| CNAME | `5u37vc4yqwmhzy4g4tplh3ngnrs2miax._domainkey` | `5u37vc4yqwmhzy4g4tplh3ngnrs2miax.dkim.amazonses.com` |
+| TXT | `driftlesslogic.com` | `v=spf1 include:_spf.google.com include:amazonses.com ~all` |
+| TXT | `_dmarc` | `v=DMARC1; p=quarantine; rua=mailto:jake@driftlesslogic.com` |
 
 ### IAM User
 
@@ -264,14 +276,15 @@ driftless/
 1. **HTTPS Everywhere**: CloudFront redirects all HTTP to HTTPS
 2. **TLS 1.2+**: Minimum protocol version enforced
 3. **No Secrets in Code**: AWS credentials stored in GitHub Secrets
-4. **SES Sandbox**: Email sending limited to verified addresses
+4. **Email Authentication**: DKIM, SPF, and DMARC configured for deliverability
 5. **Lambda Public Access**: Contact form endpoint is intentionally public
-6. **CORS**: Lambda function URL configured with appropriate CORS headers
+6. **CORS**: Lambda function configured with specific allowed origins (not wildcard)
 7. **Input Validation**: Lambda validates required fields and email format
 
 ## Future Considerations
 
-- [ ] Request SES production access for sending to any email
+- [x] Request SES production access for sending to any email
+- [x] Set up DKIM, SPF, and DMARC for email authentication
 - [ ] Add custom error pages (403, 404, 500)
 - [ ] Implement rate limiting on contact form
 - [ ] Add Google Analytics or Plausible
