@@ -6,32 +6,32 @@ The Driftless Logic website is a static marketing site built with Astro and depl
 
 ```mermaid
 flowchart TB
-    subgraph "User"
+    subgraph User
         Browser[Browser]
     end
 
-    subgraph "DNS - Cloudflare"
+    subgraph DNS_Cloudflare[DNS - Cloudflare]
         CF_DNS[Cloudflare DNS]
     end
 
-    subgraph "AWS - Content Delivery"
-        CloudFront[CloudFront Distribution<br/>E2BVWF36QXDIT3]
-        ACM[ACM Certificate<br/>791c1752-8664-44b7-8198-1c91588e352e]
-        S3[S3 Bucket<br/>driftlesslogic.com]
+    subgraph AWS_CDN[AWS - Content Delivery]
+        CloudFront[CloudFront Distribution]
+        ACM[ACM Certificate]
+        S3[S3 Bucket]
     end
 
-    subgraph "AWS - Contact Form"
-        Lambda[Lambda Function<br/>driftless-contact-form]
+    subgraph AWS_Contact[AWS - Contact Form]
+        Lambda[Lambda Function]
         SES[SES Email Service]
     end
 
-    Browser -->|https://driftlesslogic.com| CF_DNS
-    CF_DNS -->|CNAME| CloudFront
-    CloudFront -->|SSL| ACM
-    CloudFront -->|Origin| S3
-    Browser -->|POST /contact| Lambda
-    Lambda -->|Send Email| SES
-    SES -->|Deliver| Email[jake@driftlesslogic.com]
+    Browser --> CF_DNS
+    CF_DNS --> CloudFront
+    CloudFront --> ACM
+    CloudFront --> S3
+    Browser --> Lambda
+    Lambda --> SES
+    SES --> Inbox[jake at driftlesslogic.com]
 ```
 
 ## Domain Configuration
@@ -100,14 +100,14 @@ sequenceDiagram
     participant Form as Contact Form
     participant Lambda
     participant SES
-    participant Email as jake@driftlesslogic.com
+    participant Inbox as Email Inbox
 
     User->>Form: Fill out form
     User->>Form: Click Submit
     Form->>Lambda: POST JSON payload
     Lambda->>Lambda: Validate input
     Lambda->>SES: SendEmail command
-    SES->>Email: Deliver email
+    SES->>Inbox: Deliver email
     Lambda->>Form: 200 OK
     Form->>User: Success message
 ```
@@ -141,21 +141,21 @@ sequenceDiagram
 
 ```mermaid
 flowchart LR
-    subgraph "GitHub"
+    subgraph GitHub
         Push[Push to main]
         PR[Pull Request]
         Actions[GitHub Actions]
     end
 
-    subgraph "Build"
+    subgraph BuildStage[Build Stage]
         Checkout[Checkout Code]
         Setup[Setup Node.js 20]
         Install[npm ci]
-        Build[npm run build]
+        RunBuild[npm run build]
         Artifact[Upload Artifact]
     end
 
-    subgraph "Deploy"
+    subgraph DeployStage[Deploy Stage]
         Download[Download Artifact]
         Creds[Configure AWS Creds]
         S3Sync[S3 Sync]
@@ -164,7 +164,7 @@ flowchart LR
 
     Push --> Actions
     PR --> Actions
-    Actions --> Checkout --> Setup --> Install --> Build --> Artifact
+    Actions --> Checkout --> Setup --> Install --> RunBuild --> Artifact
     Artifact --> Download --> Creds --> S3Sync --> Invalidate
 ```
 
